@@ -1,0 +1,16 @@
+const fs = require('fs');
+const qrcode = require('qrcode');
+
+run().catch(error => console.error(error.stack));
+
+async function run() {
+  const res = await qrcode.toDataURL('http://asyncawait.net');
+  
+  // fs.writeFileSync('./qr.html', `<img src="${res}">`+`<br><img src="${res}">`);
+   fs.writeFile('./qr.html', 'codalien inventories' ,()=>{})
+  fs.appendFileSync('./qr.html', 'hello');
+  fs.appendFileSync('./qr.html', 'yo')
+  console.log('Wrote to ./qr.html');
+}
+
+
