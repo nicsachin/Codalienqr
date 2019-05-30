@@ -1,16 +1,102 @@
-
+<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 <center>
-<ul>
-    
-    <h1>Codalien</h1>
-   
-<%qrData.forEach((data) => {%>
-       
-<img src="<%=data%>"></img>
-<br>
-<hr> 
-<%})%>
- 
+    <div class="jumbotron">
+        <h1 style="color:red">Codalien</h1>
+        <hr>
 
+        <div class="row">
+
+            <div class="col-xs-6">
+                <table class="table">
+                    <tr>
+                        <td><p id="qrcode1"/></td>
+                        <td>
+                            <ul>
+                                <% for(let x = 0;x < qrlink.length;x++){ %>
+                                    <li>
+
+                                    </li>
+
+                            </ul>
+                        </td>
+
+                    <tr>
+
+
+                </table>
+            </div>
+            <div class="col-xs-4">
+                <p id="qrcode2">
+
+                </p>
+            </div>
+            <div class="col-xs-2">
+                <p id="qrcode3">
+
+                </p>
+            </div>
+
+        </div>
+    </div>
 </center>
+
+<script src="qrcode.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="easy.qrcode.js" type="text/javascript" charset="utf-8"></script>
+
+<% let i = 0 %>
+
+<% qrlink.forEach((data) => { %>
+    <script>
+        new QRCode(document.getElementById("qrcode1"), {
+            text: `<%= data %>`,
+            logo: "logo.jpg",
+            titleColor: "#004284", // color. default is "#000"
+            titleBgColor: "pink" // background color. default is "#fff"
+            // color. default is "#000"
+        })
+
+
+    </script>
+
+<% i++}) %>
+
+<!--////////////////////////////-->
+<% let k = 0 %>
+
+<% qrlink.forEach((data) => { %>
+    <script>
+        new QRCode(document.getElementById("qrcode2"), {
+            text: `<%= data %>`,
+            logo: "logo.jpg",
+            titleColor: "#004284", // color. default is "#000"
+            titleBgColor: "pink" // background color. default is "#fff"
+            // color. default is "#000"
+        })
+
+
+    </script>
+
+<% k++}) %>
+<!---------------------------------->
+<% let j = 0 %>
+
+<% qrlink.forEach((data) => { %>
+    <script>
+        new QRCode(document.getElementById("qrcode3"), {
+            text: `<%= data %>`,
+            logo: "logo.jpg",
+            titleColor: "#004284", // color. default is "#000"
+            titleBgColor: "pink" // background color. default is "#fff"
+            // color. default is "#000"
+        })
+
+
+    </script>
+
+<% j++}) %>
+
+</body>
+
