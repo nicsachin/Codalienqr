@@ -9,18 +9,16 @@ app.use( express.static('public'));
 
 //route for handling qr code request//
 app.get('/', (req, res) => {
-    fetch('http://localhost:3000/api')
+    fetch('http://b56f27e7.ngrok.io/api')
         .then((response) => response.json())
         .then(async (data) => {
             let x = []
             const qrData = await Promise.all(
                 data.data.map(element => {
-                    console.log('>>>>', element);
                     x.push(element)
-                    return qrcode.toDataURL(`http://localhost:3000/api/${element._id}`);
+                    return qrcode.toDataURL(`http://b56f27e7.ngrok.io/api/${element._id}`);
                 }));
             res.render('final', {qrData,name:x})
-
         })
 
 

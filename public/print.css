@@ -16,7 +16,7 @@
         background: #ffffff;
         /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);*/
         width: 11.3in;
-        margin: auto;
+        margin:auto ;
     }
 
     .top_heading {
@@ -43,7 +43,7 @@
     }
 
     .md_car {
-        max-width: 342px;
+        max-width: 340px;
         width: 100%;
         float: left;
         /*white-space: nowrap;*/
@@ -53,7 +53,7 @@
 
 
     .sm_car {
-        max-width: 330px;
+        max-width: 327px;
         width: 100%;
         float: left;
         /*white-space: nowrap;*/
@@ -91,7 +91,7 @@
     .top_row {
         display: block;
         margin: 0;
-        margin-top: -25px;
+        /*margin-top: -25px;*/
     }
 
     .title_logo {
@@ -107,6 +107,10 @@
         display: inline-block;
     }
 
+    .description_box table tr {
+        line-height: 21px;
+
+    }
     .description_box table td {
         font-weight: 500;
         color: #333;
@@ -155,7 +159,7 @@
     .md_car .top_row {
         display: block;
         margin: 0;
-        margin-top : -20px
+        /*margin-top : -20px*/
     }
 
     .md_car .title_logo {
@@ -167,7 +171,7 @@
     }
 
     .md_car .logo {
-        width: 78px;
+        width: 76px;
         display: inline-block;
     }
 
@@ -217,13 +221,13 @@
         display: table-cell;
         width: calc(100% - 100px);
         float: right;
-        padding: 7px 10px 0 0;
+        padding: 5px 10px 0 0;
     }
 
     .sm_car .top_row {
         display: block;
         margin: 0;
-        margin-top: -20px;
+        /*margin-top: -20px;*/
     }
 
     .sm_car .title_logo {
@@ -235,12 +239,12 @@
     }
 
     .sm_car .logo {
-        width: 86px;
+        width: 83px;
         display: inline-block;
     }
 
     .sm_car .description_box table tr {
-        line-height: 11px;
+        line-height: 12px;
     }
 
     .sm_car .description_box table td {
