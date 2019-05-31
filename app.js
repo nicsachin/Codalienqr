@@ -1,14 +1,15 @@
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
-//const fs = require('fs');
 let qrcode = require('qrcode');
 
+//// express configuration//
 app.set('view engine', 'ejs');
 app.use( express.static('public'));
 
-app.get('/qr', (req, res) => {
-    fetch('http://057f0653.ngrok.io/api')
+//route for handling qr code request//
+app.get('/', (req, res) => {
+    fetch('http://localhost:3000/api')
         .then((response) => response.json())
         .then(async (data) => {
             let x = []
@@ -16,14 +17,8 @@ app.get('/qr', (req, res) => {
                 data.data.map(element => {
                     console.log('>>>>', element);
                     x.push(element)
-                    return qrcode.toDataURL(`http://057f0653.ngrok.io/api/${element._id}`);
-
-                })
-            );
-              // if(req.params.num > qrData.length)
-              //      req.params.num = qrData.length
-
-
+                    return qrcode.toDataURL(`http://localhost:3000/api/${element._id}`);
+                }));
             res.render('final', {qrData,name:x})
 
         })
@@ -31,5 +26,5 @@ app.get('/qr', (req, res) => {
 
 });
 
-
-app.listen(5000, () => console.log('server started'));
+const port  = 5000 || process.env.PORT
+app.listen(5000, () => console.log('server started'))
