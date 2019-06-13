@@ -9,14 +9,14 @@ app.use( express.static('public'));
 
 //route for handling qr code request//
 app.get('/', (req, res) => {
-    fetch('http://b56f27e7.ngrok.io/api')
+    fetch('https://codalien.com/api')
         .then((response) => response.json())
         .then(async (data) => {
             let x = []
             const qrData = await Promise.all(
                 data.data.map(element => {
                     x.push(element)
-                    return qrcode.toDataURL(`http://b56f27e7.ngrok.io/api/${element._id}`);
+                    return qrcode.toDataURL(`https://codalien.com/api/${element._id}`);
                 }));
             res.render('final', {qrData,name:x})
         })
